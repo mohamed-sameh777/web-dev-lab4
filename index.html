@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main class="todo-card">
+    <h1>Todo App</h1>
+
+    <form id="task-form" class="task-form">
+      <label class="visually-hidden" for="task-input">What needs doing?</label>
+      <input
+        id="task-input"
+        type="text"
+        placeholder="What needs doing?"
+        autocomplete="off"
+        maxlength="120"
+        required
+      >
+      <button class="add-button" type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <p class="tip">double-click a task to edit. Press Enter to save.</p>
+      <nav class="filters" aria-label="Filter tasks">
+        <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+      </nav>
+    </div>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    <p id="empty-message" class="empty-message" hidden>No tasks to show.</p>
+
+    <footer class="todo-footer">
+      <p id="items-left" class="items-left">0 items left</p>
+      <div class="footer-actions">
+        <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+        <button id="clear-all" class="text-button" type="button">Clear all</button>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

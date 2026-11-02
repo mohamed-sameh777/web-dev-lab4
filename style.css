@@ -1,0 +1,265 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #25283a;
+  background: #f1f3ff;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, #f5f6ff, #e9edff);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.todo-card {
+  width: min(100%, 560px);
+  padding: 24px 26px 20px;
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 14px;
+  box-shadow: 0 12px 34px rgba(40, 48, 90, 0.10);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.task-form {
+  display: flex;
+  gap: 8px;
+}
+
+.task-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #e5e8f0;
+  border-radius: 7px;
+  outline: none;
+  color: #25283a;
+  background: #fafbfe;
+}
+
+.task-form input:focus,
+.edit-input:focus {
+  border-color: #5790f5;
+  box-shadow: 0 0 0 3px rgba(65, 130, 245, 0.12);
+}
+
+.add-button {
+  flex: 0 0 auto;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #4385ed;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #2f70dc;
+}
+
+.toolbar {
+  min-height: 48px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tip {
+  margin: 0;
+  color: #8a8fa1;
+  font-size: 11px;
+}
+
+.filters {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+}
+
+.filter-button,
+.text-button {
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 5px;
+  color: #60677a;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.text-button:hover {
+  background: #f1f4fb;
+}
+
+.filter-button.is-selected {
+  color: #3478e5;
+  background: #eaf1ff;
+  font-weight: 700;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-top: 1px solid #f0f1f5;
+}
+
+.task-checkbox {
+  width: 15px;
+  height: 15px;
+  margin: 0 1px 0 3px;
+  accent-color: #4385ed;
+  cursor: pointer;
+}
+
+.task-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  cursor: default;
+}
+
+.task-item.is-completed .task-text {
+  color: #a1a5b1;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 5px;
+  color: #9298a8;
+  background: transparent;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #d64755;
+  background: #fff0f1;
+}
+
+.edit-input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid #4385ed;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+.empty-message {
+  margin: 18px 0;
+  color: #969baa;
+  font-size: 13px;
+  text-align: center;
+}
+
+.todo-footer {
+  min-height: 43px;
+  margin-top: 3px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #f0f1f5;
+}
+
+.items-left {
+  margin: 0;
+  color: #858b9c;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.text-button {
+  border: 1px solid #e7e9ef;
+  padding: 5px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.text-button:disabled {
+  color: #c3c6cf;
+  cursor: not-allowed;
+  background: #fafafa;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding: 24px 12px;
+  }
+
+  .todo-card {
+    padding: 20px 16px 16px;
+  }
+
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 7px 0 10px;
+  }
+
+  .filters {
+    align-self: flex-end;
+  }
+
+  .todo-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-actions {
+    align-self: flex-end;
+  }
+}
